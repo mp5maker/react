@@ -88,3 +88,78 @@ var {bread, meat, toppings} = sandwich;
 console.log(bread);
 console.log(meat);
 console.log(toppings);
+
+// Destructuring incoming function arguments
+var status = employee => {
+    console.log(`${employee.name} :: ${employee.age} :: ${employee.salary}`);
+}
+
+employee = {
+    name: "Shabuktagin Photon Khan",
+    age: 23,
+    salary: 56000
+}
+
+dayum = {
+    name: "Dayum Son",
+    age: 29,
+    salary: 23000
+}
+
+// Gives the other two fields undefined
+boom = {
+    age: 12
+}
+
+
+status(employee);
+status(dayum);
+status(boom);
+
+// Destructuring incoming function arguments
+var another_status = ({name, age, salary}) => {
+    console.log(`${name} ${age} ${salary}`);
+};
+
+another_status(employee);
+
+// Destructuring Array
+var [,,thirdOne] = ["I", "can't", "believe"];
+console.log(thirdOne);
+
+// Object Literal Enhancements [Opposite of Destructuring]
+var name = "Samith Zaman";
+var age = 23;
+// New function arrow function won't work over here
+var print = function(){
+    console.log(`${this.name} ${this.age}`);
+}
+var chessPlayer = {name, age, print};
+console.log(chessPlayer);
+chessPlayer.print();
+
+// Old Object Syntax
+var footballer = {
+    name: "Ronaldo",
+    age: 27,
+    position: "Midfielder",
+    print: function(){
+        console.log(`${this.name} ${this.age}`);
+    }
+}
+
+// New Object Syntax
+const new_footballer = {
+    name: "Mbappe",
+    age: 19,
+    position: "Striker",
+    // New way to call the function
+    print(){
+        console.log(`${this.name} ${this.age}`);
+    }
+}
+
+footballer.print();
+new_footballer.print();
+
+// Spread Operator
