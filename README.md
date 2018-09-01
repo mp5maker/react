@@ -19,3 +19,10 @@
 **node-modules**
 1) Node JS not supporting all arrow functions functionality
 2) Node JS not supporting export/import => Use Babel For it (module.exports, require)
+
+## Functions ##
+**index**
+1) Functions acting as variables
+2) Using arrow function
+3) Functions like variables in objects
+5) Functions like variables in array
