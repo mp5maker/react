@@ -130,6 +130,7 @@ console.log(thirdOne);
 // Object Literal Enhancements [Opposite of Destructuring]
 var name = "Samith Zaman";
 var age = 23;
+
 // New function arrow function won't work over here
 var print = function(){
     console.log(`${this.name} ${this.age}`);
@@ -163,3 +164,112 @@ footballer.print();
 new_footballer.print();
 
 // Spread Operator
+var teamA = ['Shahriar Sami', 'Rizwan Mannan', 'Golam Saif Erfan'];
+var teamB = ['Saif Udoy', 'Rafsan Siddique', 'Samith Zaman'];
+var totalMembers = [...teamA, ...teamB];
+console.log(totalMembers.join(', '));
+
+// Reverse Functions altered/mutated the array with a spread operator
+var [last] = totalMembers.reverse();
+console.log(last);
+console.log(teamA.join(', '));
+
+// We can also use copy the array
+var [last] = [...teamA].reverse();
+console.log(last);
+console.log(teamA);
+
+// We can also rest in spread operator
+var [first, ...rest] = teamA;
+console.log(rest.join(', '));
+
+// Funtional Arguments
+guitars = (
+    'LTD EC-1000',
+    'Fender',
+    'Les Paul'
+);
+
+function strumming(...args){
+    var [first, ...remaining] = args;
+    console.log(`${first} is my first guitar which I strummed`);
+    console.log(`${remaining}`);
+}
+
+strumming(guitars);
+
+// Spread Operator on objects
+var eating = {
+    breakfast: "coffee and bread",
+    lunch: "rice and potatoes",
+}
+
+var dinner = "veggies and fries";
+
+var meals = {
+    ...eating,
+    dinner
+}
+
+console.log(meals);
+
+// Promises
+const getFakeMembers = count => new Promise((resolves, rejects) => {
+    const api = "https://api.randomuser.me/?nat=US&result=${count}";
+    const request = new XMLHttpRequest();
+    request.open('GET', api);
+    request.onload = () => 
+        (request.status === 200) ?
+        resolves(JSON.parse(request.response).results) :
+        reject(Error(request.statusText))
+    request.onerror = (err) => rejects(err);
+    request.send();
+});
+
+// getFakeMembers(5).then(
+//     members => console.log(members),
+//     err => console.error(
+//         new Error("connot load members from randomuser.me")
+//     )
+// )
+
+// Old Style Class
+function Shoes(size, whom){
+    this.size = size;
+    this.whom = whom;
+}
+
+Shoes.prototype.print = function(){
+    console.log(`${this.size} ${this.whom}`);
+}
+
+var shoe = new Shoes(11, "Photon Khan");
+shoe.print();
+
+// New Style Class
+class NewShoes{
+    constructor(size, whom){
+        this.size = size;
+        this.whom = whom;
+    }
+
+    print(){
+        console.log(`${this.size} ${this.whom}`);
+    }
+}
+
+class FancyShoes extends NewShoes{
+    constructor(size, whom, design){
+        super(size, whom);
+        this.design = design;
+    }
+    print(){
+        super.print();
+        console.log(`Also it is the ${this.design} design`);
+    }
+}
+var newshoe = new NewShoes(12, "Shahriar Sami");
+newshoe.print();
+
+var fancyshoe = new FancyShoes(6, "Margia", "fancy");
+fancyshoe.print();
