@@ -25,4 +25,12 @@
 1) Functions acting as variables
 2) Using arrow function
 3) Functions like variables in objects
-5) Functions like variables in array
+4) Functions like variables in array
+5) Apply One function as a variable to another function using spread operator and apply
+6) Higher Order Functions
+**intermediate**
+1) Immutability
+2) Object Assign for Immutability
+3) Spread Operator for Immutability
+4) Array Immutability using array.concat
+5) Array Immutability using spread operator
