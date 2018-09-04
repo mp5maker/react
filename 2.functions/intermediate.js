@@ -72,3 +72,50 @@ console.log(addColor(colorsTwo, "Indigo"));
 // Array Immutable using spread operator
 const addColorThree = (colors, color) => [...colorsTwo, {color}]
 console.log(addColorThree(colorsTwo, "Brown"));
+
+// Impure Functions
+var imran = {
+    name: "Imran Hossain",
+    position: "midfielder",
+    team: "Bonkers",
+};
+
+function modifyImran(){
+    imran.team = "Honka";
+    return imran;
+}
+
+modifyImran();
+console.log(imran);
+
+/**
+ * Impure Function
+ */
+const shahriar = {
+    name: "Shahriar Sami",
+    education: "zero"
+}
+
+const educateSami = (person) => {
+    person.education = "Class Six";
+    return person;
+}
+
+console.log(educateSami(shahriar));
+console.log(shahriar);
+
+/**
+ * Pure Functions
+ */
+const samith = {
+    name: "Samith Zaman",
+    education: "Masters",
+};
+
+const educateSamith = (person) => ({
+    ...person,
+    education: "PHD"
+});
+
+console.log(educateSamith(samith));
+console.log(samith);
