@@ -39,3 +39,6 @@
 8) Transforming Objects into Array
 9) Reduce and Reduce Right
 10) Transform Array to Objects using Reduce
+**expert**
+1) Recursion
+2) Traversal
