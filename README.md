@@ -34,3 +34,8 @@
 3) Spread Operator for Immutability
 4) Array Immutability using array.concat
 5) Array Immutability using spread operator
+6) Pure Function, Impure Function
+7) Array Filter, Array Map
+8) Transforming Objects into Array
+9) Reduce and Reduce Right
+10) Transform Array to Objects using Reduce

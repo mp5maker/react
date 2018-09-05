@@ -119,3 +119,153 @@ const educateSamith = (person) => ({
 
 console.log(educateSamith(samith));
 console.log(samith);
+
+/**
+ * Data Transformation
+ */
+const authors = [
+    "J.K Rowling",
+    "Dan Brown"
+]
+
+console.log(authors.join(', '));
+
+/** Old Style Array Filter */
+function authorFilter(author){
+    return author[0] === "D";
+}
+
+console.log(authors.filter(authorFilter));
+
+const authorFilterTwo = (author) => author[0] === 'J';
+/** New Style Array Filter */
+console.log(authors.filter(authorFilterTwo));
+
+/**
+ * Array Map
+ */
+const books = [
+    "Harry Potter",
+    "Angels & Demons",
+    "Da Vinci Code",
+    "Oliver Twist"
+]
+/** Old Style */
+function changeBooks(book){
+    return `${book} Book`;
+}
+
+console.log(books.map(changeBooks));
+
+/** New Style */
+const changeBooksTwo = (book) => `${book} Book`;
+console.log(books.map(changeBooksTwo));
+
+/**
+ * Create a pure function (one thing to another)
+ */
+let groceries = [
+    {item: "potatoes"},
+    {item: "tomatoes"},
+    {item: "carrot"},
+    {item: "onion"},
+];
+
+/**
+ * 
+ * @param {string} oldname 
+ * @param {string} newname 
+ * @param {string} groceries 
+ */
+function editGroceries(oldname, newname, groceries){
+    function updatingGroceries(groceries){
+        if(groceries.item === oldname){
+            return newname;
+        }else{
+            return groceries.item;
+        }
+    }
+    return groceries.map(updatingGroceries);
+}
+
+console.log(editGroceries('tomatoes', 'cucumber', groceries));
+
+const editNameTwo = (oldname, newname, groceries) => 
+    groceries.map( (groceries) => {
+        if(groceries.item === oldname){
+            return newname;
+        } else {
+            return groceries.item;
+        }
+    });
+
+console.log(editNameTwo("carrot", "cabbage", groceries));
+
+/**
+ *  All of this can be written into a single line
+ */
+const editNameThree = (oldname, newname, groceries) =>
+groceries.map( groceries => (groceries.item === oldname) ? newname : groceries.item);
+console.log(editNameThree("onion", "cauli flower", groceries));
+
+/** 
+ * Transform Objects into arrays
+ */
+const uberDriver = {
+    "Muhib" : "3",
+    "Sajid" : "5",
+    "Samith": "3.8"
+}
+
+const uberDriverArray = Object.keys(uberDriver).map(key => 
+    ({
+        name: key,
+        rating: uberDriver[key]
+    })
+)
+console.log(uberDriverArray);
+
+/**
+ * Reduce
+ */
+
+const ages = [23, 28, 19, 43];
+let initialValue = 0;
+const maxAge = ages.reduce((previous,current) => {
+    if(previous > current) {
+        return previous;
+    } else {
+        return current;
+    }
+}, initialValue);
+console.log(maxAge);
+
+/**
+ * Transform Array to Objects using Reduce
+ */
+const typicalcolors = [
+    {
+        id: 1,
+        title: "Indigo",
+        rating: 5
+    },
+    {
+        id: 13,
+        title: "Yellow",
+        rating: 2
+    },
+    {
+        id: 35,
+        title: "Green",
+        rating: 3.7
+    }
+]
+
+const hashColors = typicalcolors.reduce(
+    (hash, {id, title, rating}) => {
+        hash[id] = {title, rating}
+        return hash;
+    },
+    {}
+)
+console.log(hashColors);
