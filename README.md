@@ -62,3 +62,12 @@ npm install -g babel-cli
 npm install --save-dev gulp-babel @babel/core @babel/preset-env
 npm install --save-dev gulp gulp-sass gulp-concat
 ```
+1) Problem Faced: It does not recognize **REACT**
+
+## Started ##
+```bash
+npm i @babel/core babel-loader @babel/preset-env @babel/preset-react @babel/cli --save-dev
+npm install --save-dev @babel/preset-react
+npm install --save-dev react react-dom
+npm install bootstrap
+```
