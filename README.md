@@ -70,7 +70,17 @@ npm i @babel/core babel-loader @babel/preset-env @babel/preset-react @babel/cli 
 npm install --save-dev @babel/preset-react
 npm install --save-dev react react-dom
 npm install bootstrap
+npm install --save-dev gulp gulp-sass gulp-concat
+package.json "build": "babel src -d build"
+package.json "build": "babel src/main.js build/main.js"
 ```
 1) React.createElement(element, {id,class}, data}
 2) ReactDom.render(var, domSelector)
 3) React.Component
+
+## Webpack and Everything configure [Facebook Team] ##
+```bash
+npx create-react-app my-app
+cd my-app
+npm start
+``` 

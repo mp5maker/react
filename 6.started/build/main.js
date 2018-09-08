@@ -18,6 +18,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+var Table = require('./table.js');
+
 var heading = React.createElement('h1', {
   'data-type': "title"
 }, "Learning React");
@@ -73,3 +75,67 @@ function (_React$Component) {
 }(React.Component);
 
 ReactDOM.render(React.createElement(GuitarList, null), document.getElementById('react-content-guitars'));
+
+var Footer =
+/*#__PURE__*/
+function (_React$Component2) {
+  _inherits(Footer, _React$Component2);
+
+  function Footer() {
+    _classCallCheck(this, Footer);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Footer).apply(this, arguments));
+  }
+
+  _createClass(Footer, [{
+    key: "render",
+    value: function render() {
+      return React.createElement("p", {
+        class: "lead",
+        className: "footer"
+      }, React.createElement("span", null, "2018 \xA9 Photon Enterprise", React.createElement("small", null, " Build with react app")));
+    }
+  }]);
+
+  return Footer;
+}(React.Component);
+
+ReactDOM.render(React.createElement(Footer, null), document.getElementById('footer'));
+
+var Person =
+/*#__PURE__*/
+function (_React$Component3) {
+  _inherits(Person, _React$Component3);
+
+  function Person() {
+    _classCallCheck(this, Person);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Person).apply(this, arguments));
+  }
+
+  _createClass(Person, [{
+    key: "render",
+    value: function render() {
+      var samith = {
+        name: "Samith Zaman",
+        age: 27,
+        salary: 50000,
+        hobbies: "none"
+      };
+      return React.createElement("div", {
+        class: "card"
+      }, React.createElement("div", {
+        class: "card-header"
+      }, React.createElement("span", null, "Name: ", samith.name)), React.createElement("div", {
+        class: "card-body"
+      }, React.createElement("div", null, "Age: ", samith.age), React.createElement("div", null, "Salary: ", samith.salary)), React.createElement("div", {
+        class: "card-footer"
+      }, React.createElement("div", null, "Hobbies: ", samith.hobbies)));
+    }
+  }]);
+
+  return Person;
+}(React.Component);
+
+ReactDOM.render(React.createElement(Person, null), document.getElementById('samith'));
+ReactDOM.render(React.createElement(Table, null), document.getElementById('some-data'));

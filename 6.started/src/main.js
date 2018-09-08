@@ -1,3 +1,5 @@
+const Table = require('./table.js');
+
 var heading = React.createElement('h1', {'data-type': "title"}, "Learning React");
 var list = React.createElement('ul', {class: "list-group"},
     React.createElement('li', {class: "list-group-item"}, "Tomatoes"),
@@ -41,4 +43,65 @@ class GuitarList extends React.Component {
 ReactDOM.render(
     <GuitarList />,
     document.getElementById('react-content-guitars')
+)
+
+class Footer extends React.Component {
+    render() {
+        return (
+            <p class="lead" className="footer">
+                <span>
+                    2018 &copy; Photon Enterprise 
+                    <small> Build with react app</small>
+                </span>
+            </p>
+        )
+    }
+}
+
+ReactDOM.render(
+    <Footer />,
+    document.getElementById('footer')
+)
+
+class Person extends React.Component{
+    render() {
+        const samith = {
+            name: "Samith Zaman",
+            age: 27,
+            salary: 50000,
+            hobbies: "none"
+        } 
+        return (
+            <div class="card">
+                <div class="card-header">
+                    <span>
+                        Name: {samith.name}    
+                    </span>
+                </div>
+                <div class="card-body">
+                    <div>
+                        Age: {samith.age}
+                    </div>
+                    <div>
+                        Salary: {samith.salary}
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div>
+                        Hobbies: {samith.hobbies}
+                    </div>
+                </div>
+            </div>
+        )
+    }
+}
+
+ReactDOM.render(
+    <Person />,
+    document.getElementById('samith')
+)
+
+ReactDOM.render(
+    <Table />,
+    document.getElementById('some-data')
 )
