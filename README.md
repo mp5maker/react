@@ -44,3 +44,21 @@
 2) Traversal
 3) Imperative Approach Vs Final Approach
 4) Composition [Incomplete Idea]
+
+## Babel ##
+```bash
+npm install --save-dev babel-core babel-loader babel-preset-env
+```
+1) Making changes to the package.json add a build  
+```bash
+"babel src -d build"
+```
+```bash
+npm install -g babel-cli
+```
+
+## Gulp ##
+```bash
+npm install --save-dev gulp-babel @babel/core @babel/preset-env
+npm install --save-dev gulp gulp-sass gulp-concat
+```
