@@ -42,7 +42,6 @@ var items_list = React.createElement('ul', {
   }, item);
 }));
 ReactDOM.render(items_list, document.getElementById('react-content-2'));
-var guitars = ["Fender", "ESP", "Ibanez"];
 
 var GuitarList =
 /*#__PURE__*/
@@ -58,6 +57,7 @@ function (_React$Component) {
   _createClass(GuitarList, [{
     key: "render",
     value: function render() {
+      var guitars = ["Fender", "ESP", "Ibanez"];
       return React.createElement('ul', {
         class: 'list-group'
       }, guitars.map(function (guitar, i) {
