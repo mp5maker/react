@@ -71,3 +71,6 @@ npm install --save-dev @babel/preset-react
 npm install --save-dev react react-dom
 npm install bootstrap
 ```
+1) React.createElement(element, {id,class}, data}
+2) ReactDom.render(var, domSelector)
+3) React.Component
