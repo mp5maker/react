@@ -20,3 +20,25 @@ React.createElement('ul', {class: 'list-group'},
         )
     );
 ReactDOM.render(items_list, document.getElementById('react-content-2'));
+
+
+const guitars = [
+    "Fender",
+    "ESP",
+    "Ibanez"
+];
+
+class GuitarList extends React.Component {
+    render() {
+        return React.createElement('ul', {class: 'list-group'}, 
+            guitars.map((guitar, i) => 
+                React.createElement('li', {key: i, class: 'list-group-item'}, guitar)
+            )
+        )
+    }
+}
+
+ReactDOM.render(
+    <GuitarList />,
+    document.getElementById('react-content-guitars')
+)
