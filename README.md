@@ -71,14 +71,23 @@ npm install --save-dev @babel/preset-react
 npm install --save-dev react react-dom
 npm install bootstrap
 npm install --save-dev gulp gulp-sass gulp-concat
-package.json "build": "babel src -d build"
-package.json "build": "babel src/main.js build/main.js"
+npm install --save-dev webpack webpack-cli
+npm install --save-dev webpack-dev-server
+```
+
+```
+* package.json "build": "babel src -d build" [Testing 1]
+* package.json "build": "babel src/main.js build/main.js" [Testing 2]
+* package.json "start": "webpack-dev-server --open --mode development",
+* package.json "build": "webpack --mode development"
+* webpack.config.js
 ```
 1) React.createElement(element, {id,class}, data}
 2) ReactDom.render(var, domSelector)
 3) React.Component
+4) import, export 
 
-## Webpack and Everything configure [Facebook Team] ##
+## Webpack and Everything configured [Facebook Team] ##
 ```bash
 npx create-react-app my-app
 cd my-app

@@ -1,10 +1,11 @@
-const Table = require('./table.js');
+
+import Table from "./table";
 
 var heading = React.createElement('h1', {'data-type': "title"}, "Learning React");
-var list = React.createElement('ul', {class: "list-group"},
-    React.createElement('li', {class: "list-group-item"}, "Tomatoes"),
-    React.createElement('li', {class: "list-group-item"}, "Potatoes"),
-    React.createElement('li', {class: "list-group-item"}, "Cabbage"),
+var list = React.createElement('ul', {className: "list-group"},
+    React.createElement('li', {className: "list-group-item"}, "Tomatoes"),
+    React.createElement('li', {className: "list-group-item"}, "Potatoes"),
+    React.createElement('li', {className: "list-group-item"}, "Cabbage"),
 );
 ReactDOM.render(heading, document.getElementById('react-heading'));
 ReactDOM.render(list, document.getElementById('react-content'));
@@ -16,14 +17,12 @@ var items = [
 ];
 
 var items_list =   
-React.createElement('ul', {class: 'list-group'},
+React.createElement('ul', {className: 'list-group'},
         items.map((item, i) =>
-            React.createElement('li', {key: i, class: "list-group-item"}, item)
+            React.createElement('li', {key: i, className: "list-group-item"}, item)
         )
     );
 ReactDOM.render(items_list, document.getElementById('react-content-2'));
-
-
 
 class GuitarList extends React.Component {
     render() {
@@ -32,9 +31,9 @@ class GuitarList extends React.Component {
             "ESP",
             "Ibanez"
         ];
-        return React.createElement('ul', {class: 'list-group'}, 
+        return React.createElement('ul', {className: 'list-group'}, 
             guitars.map((guitar, i) => 
-                React.createElement('li', {key: i, class: 'list-group-item'}, guitar)
+                React.createElement('li', {key: i, className: 'list-group-item'}, guitar)
             )
         )
     }
@@ -48,7 +47,7 @@ ReactDOM.render(
 class Footer extends React.Component {
     render() {
         return (
-            <p class="lead" className="footer">
+            <p className="lead" className="footer">
                 <span>
                     2018 &copy; Photon Enterprise 
                     <small> Build with react app</small>
@@ -72,13 +71,13 @@ class Person extends React.Component{
             hobbies: "none"
         } 
         return (
-            <div class="card">
-                <div class="card-header">
+            <div className="card">
+                <div className="card-header">
                     <span>
                         Name: {samith.name}    
                     </span>
                 </div>
-                <div class="card-body">
+                <div className="card-body">
                     <div>
                         Age: {samith.age}
                     </div>
@@ -86,7 +85,7 @@ class Person extends React.Component{
                         Salary: {samith.salary}
                     </div>
                 </div>
-                <div class="card-footer">
+                <div className="card-footer">
                     <div>
                         Hobbies: {samith.hobbies}
                     </div>

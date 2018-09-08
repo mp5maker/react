@@ -2,22 +2,15 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
 
-gulp.task('default', ['css', 'js']);
-
-gulp.task('js', function(){
-    gulp.src("build/**/*.js")
-    .pipe(concat('main.js'))
-    .pipe(gulp.dest('assets'));
-});
+gulp.task('default', ['css']);
 
 gulp.task('css', function(){
-    gulp.src('build/**/*.scss')
+    gulp.src('src/**/*.scss')
     .pipe(concat('main.css'))
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('assets'));
+    .pipe(gulp.dest('build'));
 })
 
-gulp.task('watch', ['css', 'js'], function(){
-    gulp.watch('build/**/*.js', ['js']);
-    gulp.watch('build/**/*.scss', ['css']);
+gulp.task('watch', ['css'], function(){
+    gulp.watch('src/**/*.scss', ['css']);
 })
