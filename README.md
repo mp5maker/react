@@ -73,6 +73,7 @@ npm install bootstrap
 npm install --save-dev gulp gulp-sass gulp-concat
 npm install --save-dev webpack webpack-cli
 npm install --save-dev webpack-dev-server
+npm install --save-dev prop-types
 ```
 
 ```
@@ -86,6 +87,7 @@ npm install --save-dev webpack-dev-server
 2) ReactDom.render(var, domSelector)
 3) React.Component
 4) import, export 
+5) PropTypes
 
 ## Webpack and Everything configured [Facebook Team] ##
 ```bash

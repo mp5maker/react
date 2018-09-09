@@ -7,7 +7,7 @@ class Table extends React.Component {
         }
         return (
             <table className="table table-striped table-bordered table-hover">
-                <thead class="thead-light">
+                <thead className="thead-light">
                     <tr>
                         <th>Name</th>
                         <th>Age</th>

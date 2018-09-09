@@ -1,5 +1,7 @@
 
 import Table from "./table";
+import Players from "./players"
+import Computer from "./summary";
 
 var heading = React.createElement('h1', {'data-type': "title"}, "Learning React");
 var list = React.createElement('ul', {className: "list-group"},
@@ -103,4 +105,14 @@ ReactDOM.render(
 ReactDOM.render(
     <Table />,
     document.getElementById('some-data')
+)
+
+ReactDOM.render(
+    <Players />,
+    document.getElementById('players')
+)
+
+ReactDOM.render(
+    <Computer />,
+    document.getElementById("computer")
 )
