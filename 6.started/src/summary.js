@@ -26,7 +26,19 @@ class Summary extends React.Component{
 }
 
 Summary.propTypes = {
-    report: PropTypes.object.isRequired,
+    report: (value, key) => {
+        if(typeof value[key].processor != 'string'){
+            return new Error("Processor needs to be a string")
+        }
+        if(typeof value[key].motherboard != 'string'){
+            return new Error("Motherboard needs to be a string");
+        }
+        if(typeof value[key].cost == 'number'){
+            return (value[key].cost > 50) ? new Error("Cost cannot be greater than 50") : ""
+        }else{
+            return new Error("Cost cannot be a string");
+        }
+    },
     additional: PropTypes.bool.isRequired,
 }
 
@@ -37,7 +49,7 @@ class Computer extends React.Component{
         this.computer = {
             processor: "Intel Processor",
             motherboard: "Giga Byte",
-            cost: 50
+            cost: 53
         }
         this.additional = false;
     }
