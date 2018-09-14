@@ -2,6 +2,8 @@
 import Table from "./table";
 import Players from "./players"
 import Computer from "./summary";
+import Collection from "./books";
+import Form from "./form";
 
 var heading = React.createElement('h1', {'data-type': "title"}, "Learning React");
 var list = React.createElement('ul', {className: "list-group"},
@@ -115,4 +117,14 @@ ReactDOM.render(
 ReactDOM.render(
     <Computer />,
     document.getElementById("computer")
+)
+
+ReactDOM.render(
+    <Collection />,
+    document.getElementById('books')
+)
+
+ReactDOM.render(
+    <Form />,
+    document.getElementById('my-form')
 )

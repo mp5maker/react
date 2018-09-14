@@ -42,14 +42,13 @@ Summary.propTypes = {
     additional: PropTypes.bool.isRequired,
 }
 
-
 class Computer extends React.Component{
     constructor(){
         super();
         this.computer = {
             processor: "Intel Processor",
             motherboard: "Giga Byte",
-            cost: 53
+            cost: 47
         }
         this.additional = false;
     }
