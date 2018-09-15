@@ -95,3 +95,15 @@ npx create-react-app my-app
 cd my-app
 npm start
 ``` 
+## Concepts ##
+```bash
+npm install
+```
+
+1) Core Concepts about functions
+2) Core Concepts about classes
+3) Core Concepts about handlingEvents
+4) Core Concepts about bindings
+5) Core Concepts about eventHandling
+6) Core Concepts about togglemode
+7) Core Concepts about Map and Arrow Function
