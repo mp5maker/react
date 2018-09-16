@@ -107,3 +107,21 @@ npm install
 5) Core Concepts about eventHandling
 6) Core Concepts about togglemode
 7) Core Concepts about Map and Arrow Function
+
+## List of React Libraries Integration ##
+```bash
+npm install isomorphic-fetch --save
+npm install d3 --save
+npm install deep-freeze --save-dev
+npm install jest-css-modules --save-dev
+npm install enzyme react-addons-test-utils --save-dev
+npm install react-router-dom --save
+```
+
+1) Isomorphic: Easily Allow us to make API Promises, calls
+2) D3: To interpolate timeline data
+3) Deep Freeze: It make sure our state and action object stays immutable 
+4) Jest: To ignore css, sass files that are imported directly in the components
+5) Enzyme:  Used to render and interact with components
+6) Router: Router for React
+7) Flux, Redux
