@@ -397,3 +397,80 @@ ReactDOM.render(
     <PlayerMap />,
     document.getElementById('player-map')
 )
+
+class SimpleForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { 
+            fullname: '',
+            description: '',
+            gender: '',
+            hobbies: [],
+        };
+        this.handleFullName = this.handleFullName.bind(this);
+        this.handleDescription = this.handleDescription.bind(this);
+        this.handleGender = this.handleGender.bind(this);
+        this.handleHobbies = this.handleHobbies.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleFullName(event) {
+        this.setState({
+            fullname: event.target.value,
+        })
+    }
+
+    handleDescription(event) {
+        this.setState({
+            description: event.target.value
+        });
+    }
+
+    handleGender(event) {
+        this.setState({
+            gender: event.target.value
+        });
+    }
+
+    handleHobbies(event) {
+        this.setState({
+            hobbies: event.target.value
+        })
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        console.log(`Full Name: ${this.state.fullname}`);
+        console.log(`Description: ${this.state.description}`);
+        console.log(`Gender: ${this.state.gender}`);
+        console.log(`Hobbies: ${this.state.hobbies}`);
+    }
+
+    render() {
+        return (
+            <form onSubmit={this.handleSubmit}>
+                <div className="form-group">
+                    <label>FullName</label>
+                    <input type="text" value={this.state.fullname} onChange={this.handleFullName} className="form-control"/>
+                    <select onChange={this.handleGender} className="form-control" value={this.state.gender}>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <select onChange={this.handleHobbies} className="form-control" value={this.state.hobbies} multiple={true}>
+                        <option value="reading">Reading</option>
+                        <option value="guitar">Guitar</option>
+                        <option value="fishing">Fishing</option>
+                    </select>
+                    <textarea value={this.state.description} onChange={this.handleDescription} className="form-control"/>
+                    <input type="submit" value="Submit" className="form-control btn btn-success"/>
+                </div>
+            </form>
+        )
+    }
+}
+
+ReactDOM.render(
+    <SimpleForm />,
+    document.getElementById('simple-form')
+)
